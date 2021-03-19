@@ -1,5 +1,7 @@
->>>#Create a library of books.
->>>.py <- Save extension!
+>>>.py <- Save extension! 
+>>> Copyright © from AICTE <<<
+
+>>>#Create a Book Library using Array Lists!
 
 class Library(object):
     books=[]
@@ -36,7 +38,7 @@ print(book.searchBookisbn('ID278'))
 print(book.searchBookAuthor('George Eliot'))
 print(book.searchUnderPrice(400))
 
->>>#Function Usage in py
+>>>#Function Usage in py.
 
 class hello:
     def func1(self,name):
@@ -271,9 +273,6 @@ with open('sample1.csv','r+') as f:
         for line in r:
             w.writerow(line)
         
-    
-
-    
-
-
-
+>>> For File Handling Topic, create a Folder Naming 'C:\pyf' on Drive! 
+>>> Enjoy Coding for Free!
+>>> Copyright Protected®
