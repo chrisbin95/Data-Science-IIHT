@@ -1,3 +1,3 @@
-# Data-Science-IIHT
-IIHT DATA SCIENCE LOGS AND WORKSHEETS
+# Data-Science-IIHT Bangalore
+Data Science Using Python and R Studio.
 BEST OF SUCCESS!
