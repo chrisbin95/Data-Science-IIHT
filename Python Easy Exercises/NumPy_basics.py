@@ -83,3 +83,54 @@ print(data_normal)
 ax = sns.distplot(data_normal,bins=100,kde=True,color='skyblue',
                   hist_kws={"linewidth": 15,'alpha':1})
 ax.set(xlabel='Normal Distribution', ylabel='Frequency')
+
+>>>Try these exercises with ''' <-Backspace<<<
+
+import numpy as n
+'''#common import 
+x=n.zeros(5)
+print(type(x))
+z=n.arange(10,50).reshape(5,8)
+print(z)
+'''
+'''-1
+i=n.eye(3)
+print(i)
+'''
+'''0
+y=n.random.random((10,10))
+print(y)
+a=n.matrix(5,dtype=int)
+A=a.T()
+print(A)
+'''
+'''1
+b=[1,2,0,0,4,0]
+arr=n.array(b)
+print(arr)
+x=n.nonzero(arr)
+y=n.zeros(b)
+print("indeces of non zero:",x,y)
+'''
+'''2
+y=n.random.mtrand.random((10,3))
+ymax,ymin=y.max(),y.min()
+print(y,'\n max:',ymax,'\n min:',ymin)
+'''
+'''3
+z=n.ones((4,4))
+z[1:-1,1:-1]=0
+print(z)
+'''
+'''4
+z=n.zeros(100)
+print(z)
+'''
+'''5
+x=n.diag(1+n.arange(4),k=1)
+print(x)
+'''
+'''6,7
+z=n.tile(([0,1],[1,0]),(8,8))
+print(z)
+'''
