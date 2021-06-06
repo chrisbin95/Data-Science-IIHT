@@ -1,6 +1,6 @@
-# ganning127.github.io
-Ganning's Portfolio Website
+# chrisbin95.github.io
+Chrisbin's Portfolio Website
 
-This is my portolio website created just for fun. Feel free to poke around the files to see the html, css, and js behind the scenes!
+This is my portolio website. Feel free to look around the files to see the html, css, and js behind the scenes!
 
-Created: 10th Grade, May 2021
+Created: May 2021
