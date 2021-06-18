@@ -19,7 +19,7 @@
 ###### <div align="center">ＭＡＩＮ</div>
 
 <div align="center"> 
- <img style="margin: 20px" src="https://profilinator.rishav.dev/skills-assets/python-original.svg" alt="PYTHON" width="35" />  
+ <img style="margin: 600px" src="https://profilinator.rishav.dev/skills-assets/python-original.svg" alt="PYTHON" width="100" />  
 <img style="margin: 20px" src="https://profilinator.rishav.dev/skills-assets/java-original-wordmark.svg" alt="Java" height="35" />  
 <img style="margin: 20px" src="https://profilinator.rishav.dev/skills-assets/cplusplus-original.svg" alt="C++" height="35" /> 
 <img style="margin: 20px" src="https://cdn.svgporn.com/logos/nodejs.svg" alt="Node.js" width="35" /> 
