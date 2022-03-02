@@ -8,7 +8,7 @@
 <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 10px;" />
 </a>  
  <a href="https://github.com/chrisbin95/Data-Science-IIHT" target="_blank">
-<img src=https://franchisebyte.com/wp-content/uploads/2020/11/IIHT-Franchise-Logo.png alt=iiht style="width:70px;position:absolute;top:119px;margin-bottom: 10px;" />
+<img src=https://franchisebyte.com/wp-content/uploads/2020/11/IIHT-Franchise-Logo.png alt=iiht style="width:70px;height:28px;margin-bottom: 10px;" />
 </a>  
 </div>
 
