@@ -1,4 +1,4 @@
-### <div align="center">CHRISBIN THOMAS</div>
+###### <div align="center">CHRISBIN THOMAS</div>
 <br/>
 <div align="center">
 <a href="https://linkedin.com/in/chrisbin-thomas-334744195" target="_blank">
