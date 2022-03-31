@@ -1,5 +1,5 @@
 #### <div align="center"> &#10024; Python Worksheet &#10024;</div>
-<div align="center"><img src=https://twilio-cms-prod.s3.amazonaws.com/original_images/header.gif alt=github style="padding:5px;margin:10px;width:35%;"/></div>
+<div align="center"><img src=https://twilio-cms-prod.s3.amazonaws.com/original_images/header.gif alt=python-ide style="padding:5px;margin:10px;width:35%;"/></div>
 <br/>
 <div align="center">
 <a href="https://linkedin.com/in/chrisbin-thomas-334744195" target="_blank">
@@ -8,9 +8,12 @@
 <a href="https://github.com/chrisbin95" target="_blank">
 <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 10px;" />
 </a>  
- <a href="https://github.com/chrisbin95/Data-Science-IIHT" target="_blank">
+<a href="https://github.com/chrisbin95/Data-Science-IIHT" target="_blank">
 <img src=https://franchisebyte.com/wp-content/uploads/2020/11/IIHT-Franchise-Logo.png alt=iiht style="width:70px;height:28px;margin-bottom: 10px;" />
 </a>  
+<a href="https://chrisbin95.github.io/Portfolio" target="_blank">
+<img src=https://user-images.githubusercontent.com/41782385/59523230-55488280-8f03-11e9-9abe-e8e0f3d9a245.gif alt=py style="width:90px;margin-bottom: 10px;" />
+</a> 
 </div>
 
 <br/>
