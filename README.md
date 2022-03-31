@@ -12,7 +12,7 @@
 <img src=https://franchisebyte.com/wp-content/uploads/2020/11/IIHT-Franchise-Logo.png alt=iiht style="width:70px;height:28px;margin-bottom: 10px;" />
 </a>  
 <a href="https://chrisbin95.github.io/Portfolio" target="_blank">
-<img src=https://user-images.githubusercontent.com/41782385/59523230-55488280-8f03-11e9-9abe-e8e0f3d9a245.gif alt=py style="width:20px;margin-bottom: 10px;" />
+<img src=https://user-images.githubusercontent.com/41782385/59523230-55488280-8f03-11e9-9abe-e8e0f3d9a245.gif alt=py style="width:30px;margin-bottom: 10px;" />
 </a> 
 </div>
 
