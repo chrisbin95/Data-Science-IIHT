@@ -476,11 +476,123 @@ print(','.join(value))
 ```
 <br/>
 
-## Acknowledgement
+# Challenge 26: Advanced operations
+### Problem Statement: Write a program that computes the value of a+aa+aaa+aaaa with a given digit as the value of a. Suppose the following input is supplied to the program: 9 Then, the output should be: 11106.
+#### Hints: In case of input data being supplied to the question, it should be assumed to be a console input.
 
+>- Python
+```python
+a = input()
+n1 = int( "%s" % a )
+n2 = int( "%s%s" % (a,a) )
+n3 = int( "%s%s%s" % (a,a,a) )
+n4 = int( "%s%s%s%s" % (a,a,a,a) )
+print(n1+n2+n3+n4)
+```
+<br/>
+
+# Challenge 27: Advanced operations
+### Problem Statement: Use a list comprehension to square each odd number in a list. The list is input by a sequence of comma-separated numbers. Suppose the following input is supplied to the program: 1,2,3,4,5,6,7,8,9 Then, the output should be: 1,3,5,7,9.
+#### Hints: In case of input data being supplied to the question, it should be assumed to be a console input.
+
+>- Python
+```python
+values = input()
+numbers = [x for x in values.split(",") if int(x)%2!=0]
+print(",".join(numbers))
+```
+<br/>
+
+# Challenge 28: Advanced operations
+### Problem Statement: Write a program that computes the net amount of a bank account based a transaction log from console input. The transaction log format is shown as following: D 100 W 200 D means deposit while W means withdrawal. Suppose the following input is supplied to the program: D 300 D 300 W 200 D 100 Then, the output should be: 500 .
+#### Hints: In case of input data being supplied to the question, it should be assumed to be a console input.
+
+>- Python
+```python
+netAmount = 0
+while True:
+    s = input()
+    if not s:
+        break
+    values = s.split(" ")
+    operation = values[0]
+    amount = int(values[1])
+    if operation=="D":
+        netAmount+=amount
+    elif operation=="W":
+        netAmount-=amount
+    else:
+        pass
+print(netAmount)
+```
+<br/>
+
+# Challenge 29: Advanced operations
+### Problem Statement: A website requires the users to input username and password to register. Write a program to check the validity of password input by users. Following are the criteria for checking the password:
+#### At least 1 letter between [a-z]
+#### At least 1 number between [0-9]
+#### At least 1 letter between [A-Z]
+#### At least 1 character from [$#@]
+#### Minimum length of transaction password: 6
+### Maximum length of transaction password: 12 Your program should accept a sequence of comma separated passwords and will check them according to the above criteria. Passwords that match the criteria are to be printed, each separated by a comma. Example If the following passwords are given as input to the program: ABd1234@1,a F1#,2w3E*,2We3345 Then, the output of the program should be: ABd1234@1.
+#### Hints: In case of input data being supplied to the question, it should be assumed to be a console input.
+
+>- Python
+```python
+import re
+value = []
+items=[x for x in input('>>>').split(',')]
+for p in items:
+    if len(p)<=6 or len(p)>12:
+        continue
+    else:
+        pass
+    if not re.search("[a-z]",p):
+        continue
+    elif not re.search("[0-9]",p):
+        continue
+    elif not re.search("[A-Z]",p):
+        continue
+    elif not re.search("[$#@]",p):
+        continue
+    elif re.search("\s",p):
+        continue
+    else:
+        pass
+    value.append(p)
+print(",".join(value))
+```
+<br/>
+
+# Challenge 30: Advanced operations
+### Problem Statement: Write a program that computes the Normal Distribution of inputs and plot the data using seaborn module.
+#### Hints: In case of input data being supplied to the question, it should be assumed to be a console input.
+
+>- Python
+```python
+
+import numpy as np
+print(sum(range(4),-1))
+#scipy using seaborn
+from scipy.stats import norm
+import seaborn as sns
+data_normal = norm.rvs(size=10000,loc=0,scale=1)
+print(data_normal)
+# settings for seaborn plotting style
+ax = sns.distplot(data_normal,bins=100,kde=True,color='skyblue',
+                  hist_kws={"linewidth": 15,'alpha':1})
+ax.set(xlabel='Normal Distribution', ylabel='Frequency')
+```
+<br/>
+
+
+## Acknowledgement
+#### Thankyou for the stars on the repository. If not do starring!
+<br/>
 - Fork the Repo and use spyder IDE for training 
 - This markdown file _(.md)_ includes code to `Python Challenges`. You can use it for reference.
 - Once you've added the zip file to downloads, download spyder or use online compilers to work with it.
 - A open pull request is considered as successful submission. Check for `debugging` errors
 - Consider Like and follow for more updates!
+<br/>
 <div align="center">&copy; | 2021 - 2022</div>
