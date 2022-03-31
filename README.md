@@ -1,4 +1,4 @@
-#### <div align="center">Python Worksheet 2022</div>
+#### <div align="center"> &#10024; Python Worksheet &#10024;</div>
 <br/>
 <div align="center">
 <a href="https://linkedin.com/in/chrisbin-thomas-334744195" target="_blank">
@@ -587,10 +587,10 @@ ax.set(xlabel='Normal Distribution', ylabel='Frequency')
 
 
 ## ```Acknowledgement```
-#### Thankyou for the stars on the repository. If not do starring!
+#### Thankyou for the ⭐ on the repository. If not, do starring! ✌
 - Fork the Repo and use spyder IDE for training 
 - This markdown file _(.md)_ includes code to `Python Challenges`. You can use it for reference.
-- Once you've added the zip file to downloads, download spyder or use online compilers to work with it.
-- A open pull request is considered as successful submission. Check for `debugging` errors
-- Consider Like and follow for more updates!
+- Once you've added the zip file to downloads, Recommended Use of : `Anaconda Spyder`, `CodePen`, `Programiz` or `Online Python` Interpreter's to work with it.
+- A open pull request is considered as successful and forking is mandatory. Check & `debug` errors on Interpreter Console.
+- Consider Like and Follow 🌟 for more updates!
 ### <div align="center"> &copy; | 2021 - 2022 </div>
