@@ -589,10 +589,10 @@ ax.set(xlabel='Normal Distribution', ylabel='Frequency')
 ## Acknowledgement
 #### Thankyou for the stars on the repository. If not do starring!
 <br/>
-- Fork the Repo and use spyder IDE for training 
-- This markdown file _(.md)_ includes code to `Python Challenges`. You can use it for reference.
-- Once you've added the zip file to downloads, download spyder or use online compilers to work with it.
-- A open pull request is considered as successful submission. Check for `debugging` errors
-- Consider Like and follow for more updates!
+#### - Fork the Repo and use spyder IDE for training 
+#### - This markdown file _(.md)_ includes code to `Python Challenges`. You can use it for reference.
+#### - Once you've added the zip file to downloads, download spyder or use online compilers to work with it.
+#### - A open pull request is considered as successful submission. Check for `debugging` errors
+#### - Consider Like and follow for more updates!
 <br/>
-<div align="center">&copy; | 2021 - 2022</div>
+### <div align="center">&copy; | 2021 - 2022</div>
