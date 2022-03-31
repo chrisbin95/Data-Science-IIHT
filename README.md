@@ -1,4 +1,5 @@
 #### <div align="center"> &#10024; Python Worksheet &#10024;</div>
+<div align="center"><img src=https://twilio-cms-prod.s3.amazonaws.com/original_images/header.gif alt=github style="padding:5px;margin: 10px;" /></div>
 <br/>
 <div align="center">
 <a href="https://linkedin.com/in/chrisbin-thomas-334744195" target="_blank">
