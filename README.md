@@ -24,39 +24,54 @@
 >- Python
 ```python
 class Library(object):
-    books=[]
-    author=[]
-    price=[]
-    def __init__(self,name,author,isbn,price):
-        self.name=name
-        self.author=author
-        self.isbn=isbn
-        self.price=price
+    books = []
+
+    def __init__(self, name, author, isbn, price):
+        self.name = name
+        self.author = author
+        self.isbn = isbn
+        self.price = price
+
     def addBook(self):
-        Library.books.append((self.name,self.author,self.isbn,self.price))
-    def searchBookisbn(self,isbn):
+        Library.books.append((self.name, self.author, self.isbn, self.price))
+
+    def searchBookisbn(self, isbn):
         for book in Library.books:
-            if book[2]==isbn:
+            if book[2] == isbn:
                 return book
-    def searchBookAuthor(self,author):
+        return None  # Return None if the book with the given ISBN is not found
+
+    def searchBookAuthor(self, author):
+        author_books = []
         for book in Library.books:
-            if book[1]==author:
-                Library.author.append(book)
-                return Library.author
-    def searchUnderPrice(self,price):
+            if book[1] == author:
+                author_books.append(book)
+        return author_books
+
+    def searchUnderPrice(self, price):
+        price_books = []
         for book in Library.books:
-            if book[3]==price:
-                Library.price.append(book)
-                return Library.price
-book=Library('Great Expectations','Charles Dick','ID0234',300)
-book.addBook()
-book=Library('War and Peace','Leo Tolstoy','ID278',250)
-book.addBook()
-book=Library('Middlemarch','George Eliot','ID345',400)
-book.addBook()
-print(book.searchBookisbn('ID278'))
-print(book.searchBookAuthor('George Eliot'))
-print(book.searchUnderPrice(400))
+            if book[3] == price:
+                price_books.append(book)
+        return price_books
+
+
+# Create instances of the Library class
+library = Library('Great Expectations', 'Charles Dick', 'ID0234', 300)
+library.addBook()
+
+library = Library('War and Peace', 'Leo Tolstoy', 'ID278', 250)
+library.addBook()
+
+library = Library('Middlemarch', 'George Eliot', 'ID345', 400)
+library.addBook()
+
+# Create a new instance for searching
+search_instance = Library('', '', '', '')
+
+print(search_instance.searchBookisbn('ID278'))
+print(search_instance.searchBookAuthor('George Eliot'))
+print(search_instance.searchUnderPrice(400))
 ```
 <br/>
 
@@ -65,13 +80,22 @@ print(book.searchUnderPrice(400))
 
 >- Python
 ```python
-class hello:
-    def func1(self,name):
-        print(f"hello,{name}")
+class Hello:
+    def func1(self, name):
+        print(f"Hello, {name}")
         return name
-b=hello()
-x=input("Enter the name:")
-b.func1(x)
+
+# Create an instance of the Hello class
+b = Hello()
+
+# Get input from the user
+x = input("Enter the name: ")
+
+# Call the func1 method and capture the returned value
+result = b.func1(x)
+
+# Print the returned value
+print(f"Returned value: {result}")
 ```
 <br/>
 
@@ -80,19 +104,29 @@ b.func1(x)
 
 >- Python
 ```python
-class samp:
-    def __init__(self,name,age,id,salary):
-        self.name= name
-        self.age= age
-        self.id= id
-        self.salary= salary
-emp1= samp('faker',24,'id33',25000)
-emp2= samp('joker',25,'id32',30000)
+class Samp:
+    def __init__(self, name, age, emp_id, salary):  # Changed "id" to "emp_id" for clarity
+        self.name = name
+        self.age = age
+        self.emp_id = emp_id  # Changed to "emp_id" for clarity
+        self.salary = salary
+
+# Create instances of the Samp class
+emp1 = Samp('faker', 24, 'id33', 25000)
+emp2 = Samp('joker', 25, 'id32', 30000)
+
+# Print the dictionary representation of each instance
 print(emp1.__dict__)
 print(emp2.__dict__)
+
+# Access individual attributes
 print(emp1.name)
 print(emp2.age)
-print(emp2.__init__)
+
+# Note: "__init__" is not something you usually access directly.
+# Instead, it's called automatically when you create an instance.
+# If you want to check the type of the constructor, use the type() function.
+print(type(emp1.__init__))
 ```
 <br/>
 
@@ -101,20 +135,28 @@ print(emp2.__init__)
 
 >- Python
 ```python
-class complexno:
-    def __init__(self,r=0,i=0):
-        self.real=r
-        self.imag=i
+class ComplexNo:
+    def __init__(self, r=0, i=0):
+        self.real = r
+        self.imag = i
+
     def get(self):
-        print("{0}+{1}j".format(self.real,self.imag))
-x=float(input("Enter a real no:"))
-y=float(input("Enter an imaginary no:"))
-c1= complexno(x,y)
+        print("{0}+{1}j".format(self.real, self.imag))
+
+# Get input from the user
+x = float(input("Enter a real no: "))
+y = float(input("Enter an imaginary no: "))
+
+# Create instances of the ComplexNo class
+c1 = ComplexNo(x, y)
 c1.get()
-c2= complexno(y)
-c2.var= 10
-print((c2.real, c2.imag, c2.var))
-print(c2.var)
+
+c2 = ComplexNo(y)
+c2.var = 10  # Add var as an attribute to c2 instance
+
+# Access and print attributes
+print((c2.real, c2.imag, getattr(c2, 'var', None)))  # Use getattr to avoid AttributeError
+print(c2.var if hasattr(c2, 'var') else None)  # Check if 'var' exists before accessing
 ```
 <br/>
 
@@ -123,21 +165,31 @@ print(c2.var)
 
 >- Python
 ```python
-class car:
-    def __init__(self,year,mph,speed):
-        self.year=year
-        self.mph=mph
-        self.speed=speed
-    def accelerate(self,speed):
-        for i in range(speed,121,10):
-                print("accelerating speed:",i)
-    def brake(self,speed):
-        for x in range(speed,10,-20):
-            print("braking speed:",x)  
-c1=car(2014,58,60)
-print('year ',c1.year)
-print('mph ',c1.mph)
-print('speed ',c1.speed)
+class Car:
+    def __init__(self, year, mph, speed):
+        self.year = year
+        self.mph = mph
+        self.speed = speed
+
+    def accelerate(self, speed_increase):
+        for i in range(self.speed, self.speed + speed_increase + 1, 10):
+            print("Accelerating speed:", i)
+        self.speed += speed_increase
+
+    def brake(self, speed_decrease):
+        for x in range(self.speed, max(self.speed - speed_decrease - 1, 0), -20):
+            print("Braking speed:", x)
+        self.speed = max(self.speed - speed_decrease, 0)
+
+# Create an instance of the Car class
+c1 = Car(2014, 58, 60)
+
+# Access and print attributes
+print('Year:', c1.year)
+print('MPH:', c1.mph)
+print('Speed:', c1.speed)
+
+# Accelerate and brake
 c1.accelerate(10)
 c1.brake(120)
 ```
@@ -148,21 +200,28 @@ c1.brake(120)
 
 >- Python
 ```python
-class company:
-    def __init__(self,name,turn,rev,eno):
-        self.name= name
-        self.turn=turn
-        self.rev=rev
-        self.eno=eno
+class Company:
+    def __init__(self, name, turn, rev, eno):
+        self.name = name
+        self.turn = turn
+        self.rev = rev
+        self.eno = eno
+
     def revenue(self):
-        i=self.rev/self.eno
-        print('\n Revenue per employee is:',i)
-x=input("NAME:")
-y=int(input("TURN-OVER:"))
-z=int(input("REVENUE:"))
-a=int(input("NO: OF EMPLOYEES:"))
-c=company(x,y,z,a)
-c.revenue()
+        i = self.rev / self.eno
+        print('\nRevenue per employee is:', i)
+
+# Get input from the user
+name_input = input("NAME: ")
+turnover_input = int(input("TURN-OVER: "))
+revenue_input = int(input("REVENUE: "))
+employees_input = int(input("NO: OF EMPLOYEES: "))
+
+# Create an instance of the Company class
+company_instance = Company(name_input, turnover_input, revenue_input, employees_input)
+
+# Call the revenue method
+company_instance.revenue()
 ```
 <br/>
 
@@ -171,15 +230,16 @@ c.revenue()
 
 >- Python
 ```python
-def change(var, list):
-    var=1
-    list[3]=40
-k=4
-a=[1,2,3,4]
-print(a);
+def change(var, lst):  # Avoid using 'list' as a variable name, as it's a built-in type
+    var = 1
+    lst[3] = 40
+
+k = 4
+a = [1, 2, 3, 4]
+
+print("Original list:", a)
 change(k, a)
-print(change)
-print(a);
+print("Modified list:", a)
 ```
 <br/>
 
@@ -188,18 +248,23 @@ print(a);
 
 >- Python
 ```python
-class rect:
-    def __init__(self,length,width):
-        
-        self.length=length
-        self.width=width
+class Rect:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
     def cal(self):
-        return self.length*self.width
+        return self.length * self.width
+
     def cal1(self):
-        return (2*(self.length+self.width))
-c=rect(3,4)
-print('Area of the Rectangle',c.cal())
-print('Perimeter of the Rectangle',c.cal1())
+        return 2 * (self.length + self.width)
+
+# Create an instance of the Rect class
+c = Rect(3, 4)
+
+# Calculate and print the area and perimeter
+print('Area of the Rectangle:', c.cal())
+print('Perimeter of the Rectangle:', c.cal1())
 ```
 <br/>
 
@@ -208,19 +273,22 @@ print('Perimeter of the Rectangle',c.cal1())
 
 >- Python
 ```python
-class samp:
+class Samp:
     def __init__(self):
-        self.smp=read(self)
-def read(lst):
-    lst=[]
-    try:
-        for i in range(1,6):
-            lst.append((input('Enter:')))        
-    except ValueError:
-            print(lst,'contains string!Run again.')
-    print("list of 5 integers:",lst)    
-samp()
-read(int) 
+        self.smp = self.read()
+
+    def read(self):
+        lst = []
+        try:
+            for i in range(1, 6):
+                lst.append(int(input('Enter an integer: ')))
+        except ValueError:
+            print('Input contains a non-integer! Run again.')
+        print("List of 5 integers:", lst)
+        return lst
+
+# Create an instance of the Samp class
+s = Samp() 
 ```
 <br/>
 
@@ -229,16 +297,24 @@ read(int)
 
 >- Python
 ```python
-i=[1,2,3]
-j=[4,5,6]
-k=len(i)
-print(k)
-print(i)
+i = [1, 2, 3]
+j = [4, 5, 6]
+k = len(i)
+
+print("Length of i:", k)
+print("Original list i:", i)
+
+# Remove the element '1' from the list
 i.remove(1)
-print(i)
+print("List i after removing element '1':", i)
+
+# Remove the element at index 0 from the list
 i.pop(0)
-print(i)
-i.append
+print("List i after popping element at index 0:", i)
+
+# Append a new element to the list
+i.append(7)
+print("List i after appending '7':", i)
 ```
 <br/>
 
@@ -247,10 +323,16 @@ i.append
 
 >- Python
 ```python
-class looping:
-        for i in range(1,11):
-            print(i,"",i+10,"",i*100,'',i*1000)
-l=looping()
+class Looping:
+    def print_numbers(self):
+        for i in range(1, 11):
+            print(i, "", i + 10, "", i * 100, '', i * 1000)
+
+# Create an instance of the Looping class
+l = Looping()
+
+# Call the print_numbers method
+l.print_numbers()
 ```
 <br/>
 
@@ -260,13 +342,29 @@ l=looping()
 >- Python
 ```python
 import os
-os.chdir('C:\python')
-a=open('sam1.txt','w+')
+
+# Use double backslashes or a raw string for the path
+os.chdir('C:\\python')
+
+# Open a file for writing and reading
+a = open('sam1.txt', 'w+')
+
+# Write to the file
 for i in range(10):
-    a.write("This is a new txt file %d\n\r" %(i+1))
-a=open('sam1.txt','r')
-x=a.read()
+    a.write("This is a new txt file %d\n\r" % (i + 1))
+
+# Close the file
+a.close()
+
+# Open the file for reading
+a = open('sam1.txt', 'r')
+
+# Read and print the contents
+x = a.read()
 print(x)
+
+# Close the file
+a.close()
 ```
 <br/>
 
@@ -277,12 +375,18 @@ print(x)
 ```python
 import csv
 import os
-os.chdir('C:\pyf')
-with open('sample1.csv','r') as File:
-    read=csv.reader(File)
-    #next(read) #read next line
-    for a in File:
-        print(a)
+
+# Set the working directory
+os.chdir('C:\\pyf')
+
+# Open the CSV file for reading
+with open('sample1.csv', 'r') as file:
+    # Create a CSV reader
+    reader = csv.reader(file)
+    
+    # Iterate over each row in the CSV file
+    for row in reader:
+        print(row)
 ```
 <br/>
 
@@ -293,11 +397,16 @@ with open('sample1.csv','r') as File:
 ```python
 import csv
 import os
-os.chdir('C:\pyf')
-with open('sample1.csv','r+') as f:
-    r=csv.reader(f)
-    with open('hello.csv','w') as new:
-        w=csv.writer(new, delimiter='-')
+
+# Set the working directory
+os.chdir('C:\\pyf')
+
+with open('sample1.csv', 'r') as f:
+    r = csv.reader(f)
+
+    with open('hello.csv', 'w', newline='') as new:
+        w = csv.writer(new, delimiter='-')
+
         for line in r:
             w.writerow(line)
 ```
@@ -310,11 +419,14 @@ The numbers obtained should be printed in a comma-separated sequence on a single
 
 >- Python
 ```python
-l=[]
+l = []
+
 for i in range(10, 100):
-    if (i%7==0) and (i%5!=0):
+    if (i % 7 == 0) and (i % 5 != 0):
         l.append(str(i))
-print(','.join(l),end='.')
+
+result = ', '.join(l) + '.'
+print(result)
 ```
 <br/>
 
@@ -325,11 +437,18 @@ print(','.join(l),end='.')
 >- Python
 ```python
 def fact(x):
-    if x == 0:
+    if x < 0:
+        return "Factorial is not defined for negative numbers."
+    elif x == 0:
         return 1
-    return x * fact(x - 1)
-x=int(input())
-print(fact(x))
+    else:
+        return x * fact(x - 1)
+
+try:
+    x = int(input("Enter a non-negative integer: "))
+    print(f"The factorial of {x} is: {fact(x)}")
+except ValueError:
+    print("Invalid input. Please enter a non-negative integer.")
 ```
 <br/>
 
@@ -339,11 +458,15 @@ print(fact(x))
 
 >- Python
 ```python
-n=int(input('Enter the input:'))
-d=dict()
-for i in range(1,n+1):
-    d[i]=i*i
-print(d)
+try:
+    n = int(input('Enter a non-negative integer: '))
+    if n < 0:
+        print("Please enter a non-negative integer.")
+    else:
+        d = {i: i*i for i in range(1, n+1)}
+        print(d)
+except ValueError:
+    print("Invalid input. Please enter a non-negative integer.")
 ```
 <br/>
 
@@ -353,11 +476,12 @@ print(d)
 
 >- Python
 ```python
-values=input("enter:")
-l=values.split(",")
-t=tuple(l)
-print(l)
-print(t)
+values = input("Enter comma-separated values: ")
+l = [value.strip() for value in values.split(",")]
+t = tuple(l)
+
+print("List:", l)
+print("Tuple:", t)
 ```
 <br/>
 
@@ -368,17 +492,19 @@ print(t)
 >- Python
 ```python
 class InputOutString(object):
-    def __init__(self):
-        self.s = ""
+    def __init__(self, input_string=""):
+        self.s = input_string
 
-    def getString(self):
-        self.s = input()
-    
     def printString(self):
         print(self.s.upper())
-print('\n Enter String:')
-strObj = InputOutString()
-strObj.getString()
+
+# Get input string from the user
+user_input = input('Enter a string: ')
+
+# Create an instance of the class with the user input
+strObj = InputOutString(user_input)
+
+# Print the string in uppercase
 strObj.printString()
 ```
 <br/>
@@ -390,13 +516,19 @@ strObj.printString()
 >- Python
 ```python
 import math
-c=input("enter:")
-h=input("enter:")
-value = []
-items=[x for x in input().split(',')]
-for d in items:
-    value.append(str(int(round(math.sqrt(2*c*float(d)/h)))))
-print(','.join(value))
+
+# Take input for c and h
+c = float(input("Enter value for c: "))
+h = float(input("Enter value for h: "))
+
+# Take a comma-separated list of values
+items = [float(x) for x in input("Enter comma-separated values: ").split(',')]
+
+# Calculate the rounded square root for each value
+values = [str(int(round(math.sqrt(2 * c * d / h)))) for d in items]
+
+# Print the result
+print(','.join(values))
 ```
 <br/>
 
@@ -406,15 +538,16 @@ print(','.join(value))
 
 >- Python
 ```python
-input_str = 3,5
-dimensions=[int(x) for x in input_str]
-rowNum=dimensions[0]
-colNum=dimensions[1]
-multilist = [[0 for col in range(colNum)] for row in range(rowNum)]
+input_str = "3,5"  # Using a string for input
+dimensions = [int(x) for x in input_str.split(',')]
+row_num = dimensions[0]
+col_num = dimensions[1]
 
-for row in range(rowNum):
-    for col in range(colNum):
-        multilist[row][col]= row*col
+multilist = [[0 for col in range(col_num)] for row in range(row_num)]
+
+for row in range(row_num):
+    for col in range(col_num):
+        multilist[row][col] = row * col
 
 print(multilist)
 ```
@@ -426,7 +559,7 @@ print(multilist)
 
 >- Python
 ```python
-items=input([x for x in input().split(',')])
+items = input("Enter comma-separated items: ").split(',')
 items.sort()
 print(','.join(items))
 ```
@@ -439,12 +572,12 @@ print(','.join(items))
 >- Python
 ```python
 lines = []
+
 while True:
-    s = input(">>>")
-    if s:
-        lines.append(s.upper())
-    else:
-        break;
+    s = input(">>> ")
+    if not s:
+        break
+    lines.append(s.upper())
 
 for sentence in lines:
     print(sentence)
@@ -458,8 +591,8 @@ for sentence in lines:
 >- Python
 ```python
 s = input('>>>')
-words = [word for word in s.split(" ")]
-print(" ".join(sorted(list(set(words)))))
+unique_sorted_words = ' '.join(sorted(set(s.split())))
+print(unique_sorted_words)
 ```
 <br/>
 
@@ -469,14 +602,9 @@ print(" ".join(sorted(list(set(words)))))
 
 >- Python
 ```python
-value = []
-items=[x for x in input('>>>').split(',')]
-for p in items:
-    intp = int(p, 2)
-    if not intp%5:
-        value.append(p)
-
-print(','.join(value))
+binary_input = input('>>>')
+binary_numbers = [x for x in binary_input.split(',') if int(x, 2) % 5 == 0]
+print(','.join(binary_numbers))
 ```
 <br/>
 
@@ -492,6 +620,16 @@ n2 = int( "%s%s" % (a,a) )
 n3 = int( "%s%s%s" % (a,a,a) )
 n4 = int( "%s%s%s%s" % (a,a,a,a) )
 print(n1+n2+n3+n4)
+
+#(or)
+
+a = input()
+total_sum = 0
+
+for i in range(1, 5):
+    total_sum += int(str(a) * i)
+
+print(total_sum)
 ```
 <br/>
 
@@ -501,9 +639,12 @@ print(n1+n2+n3+n4)
 
 >- Python
 ```python
-values = input()
-numbers = [x for x in values.split(",") if int(x)%2!=0]
-print(",".join(numbers))
+try:
+    values = input("Enter comma-separated numbers: ")
+    numbers = [x for x in values.split(",") if int(x) % 2 != 0]
+    print(",".join(numbers))
+except ValueError:
+    print("Invalid input. Please enter integer values.")
 ```
 <br/>
 
@@ -514,20 +655,30 @@ print(",".join(numbers))
 >- Python
 ```python
 netAmount = 0
+
 while True:
-    s = input()
+    s = input("Enter transaction (D/W amount) or press Enter to finish: ")
     if not s:
         break
+
     values = s.split(" ")
-    operation = values[0]
-    amount = int(values[1])
-    if operation=="D":
-        netAmount+=amount
-    elif operation=="W":
-        netAmount-=amount
+    
+    if len(values) == 2:
+        operation = values[0]
+        try:
+            amount = int(values[1])
+            if operation == "D":
+                netAmount += amount
+            elif operation == "W":
+                netAmount -= amount
+            else:
+                print("Invalid operation. Please enter 'D' or 'W'.")
+        except ValueError:
+            print("Invalid amount. Please enter a valid integer.")
     else:
-        pass
-print(netAmount)
+        print("Invalid input. Please enter a valid transaction.")
+
+print("Net Amount:", netAmount)
 ```
 <br/>
 
@@ -565,6 +716,20 @@ for p in items:
         pass
     value.append(p)
 print(",".join(value))
+
+#(or)
+
+import re
+
+def is_valid_password(password):
+    if 6 <= len(password) <= 12 and re.match("^[a-zA-Z0-9$#@]+$", password) and any(c.islower() for c in password) and any(c.isdigit() for c in password) and any(c.isupper() for c in password) and any(c in '$#@' for c in password):
+        return True
+    return False
+
+items = [x for x in input('Enter passwords separated by commas: ').split(',')]
+valid_passwords = [p for p in items if is_valid_password(p)]
+
+print("Valid passwords:", ",".join(valid_passwords))
 ```
 <br/>
 
@@ -585,6 +750,24 @@ print(data_normal)
 # settings for seaborn plotting style
 ax = sns.distplot(data_normal,bins=100,kde=True,color='skyblue',
                   hist_kws={"linewidth": 15,'alpha':1})
+ax.set(xlabel='Normal Distribution', ylabel='Frequency')
+
+#(or)
+
+import numpy as np
+from scipy.stats import norm
+import seaborn as sns
+
+# Example 1
+print(sum(range(4), -1))  # Output: 6
+
+# Example 2
+# Generate random samples from a normal distribution
+data_normal = norm.rvs(size=10000, loc=0, scale=1)
+
+# Create a histogram with KDE using seaborn
+ax = sns.distplot(data_normal, bins=100, kde=True, color='skyblue',
+                  hist_kws={"linewidth": 15, 'alpha': 1})
 ax.set(xlabel='Normal Distribution', ylabel='Frequency')
 ```
 <br/>
