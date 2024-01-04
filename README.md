@@ -760,10 +760,10 @@ ax.set(xlabel='Normal Distribution', ylabel='Frequency')
 
 
 ## ```Acknowledgement```
-#### Thankyou for the ⭐ on the repository. If not, do starring! ✌
-- Fork the Repo and use spyder IDE (or) [https://replit.com/languages/online-python-compiler](Replit) for training 
-- This markdown file _(.md)_ includes code to `Python Challenges`. You can use it for reference.
+#### Thankyou for the ⭐ on the repository. If not, consider starring! :( ✌
+- Fork the Repo and use spyder IDE (or) [Replit](https://replit.com/languages/online-python-compiler) for training.
+- This markdown file _(.md)_ includes code to `Python Challenges`. You can use it for study reference.
 - Once you've added the zip file to downloads, Recommended Use of : `Anaconda Spyder`, `CodePen`, `Programiz` or `Online Python` Interpreter's to work with it.
-- A open pull request is considered as successful and forking is mandatory. Check & `debug` errors on Interpreter Console.
+- A open pull request is considered as successful and forking is good. Check & `debug` errors on Interpreter Console.
 - Consider Like and Follow 🌟 for more updates!
-### <div align="center"> &copy; | 2021 - 2022 </div>
+### <div align="center"> &copy; | 2021 - 2024 </div>
